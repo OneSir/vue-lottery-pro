@@ -1,6 +1,6 @@
 {
-  "name": "lottery-3d",
-  "version": "0.1.0",
+  "name": "lottery-pro",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
