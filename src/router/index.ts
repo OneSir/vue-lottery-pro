@@ -10,8 +10,8 @@ const routes: Array<RouteConfig> = [
     component: () => import(/* webpackChunkName: "lottery" */ "../views/lottery/lottery.vue")
   },
   {
-    path: "/lottery-pro",
-    name: "lottery-pro",
+    path: "/vue-lottery-pro",
+    name: "vue-lottery-pro",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
