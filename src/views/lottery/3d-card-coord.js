@@ -17,8 +17,8 @@ const targetsCoord = function ({targets, objects, cardSize} = defaultObj) {
     // }
     const object = new THREE.Object3D();
     // 默认在中心点，需要减去总画布尺寸的一半
-    object.position.x = ( currentCardData.col * (cardSize.width+20) ) - (((colCount+1) * (cardSize.width+20)) / 2);
-    object.position.y = - ( currentCardData.row * (cardSize.height+20) ) + (((rowCount+1) * (cardSize.height+20)) / 2);
+    object.position.x = ( currentCardData.col * (cardSize.width+30) ) - (((colCount+1) * (cardSize.width+30)) / 2);
+    object.position.y = - ( currentCardData.row * (cardSize.height+30) ) + (((rowCount+1) * (cardSize.height+30)) / 2);
 
     targets.table.push( object );
   }

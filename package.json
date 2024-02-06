@@ -1,11 +1,17 @@
 {
   "name": "vue-lottery-pro",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "serve:local": "vue-cli-service serve --mode local",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "test:unit": "vue-cli-service test:unit",
+    "test": "jest --collect-coverage",
+    "lint": "vue-cli-service lint",
+    "build:test": "vue-cli-service build --mode test",
+    "build:product": "vue-cli-service build --mode product",
+    "lint:nofix": "vue-cli-service lint --no-fix"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -14,6 +20,7 @@
     "vue-cookies": "^1.8.2",
     "vue-property-decorator": "^9.1.2",
     "vue-router": "^3.2.0",
+    "vuescroll": "^4.18.1",
     "vuex": "^3.4.0"
   },
   "devDependencies": {

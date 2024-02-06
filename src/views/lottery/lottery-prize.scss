@@ -1,12 +1,12 @@
 .prize-wrap {
-  height: 100%;
+  height: 850px;
   width: 10vw;
   min-width: 300px;
   display: flex;
   flex-direction: column;
 }
 .prize-list {
-  //height: 100%;
+  height: 100%;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -14,12 +14,13 @@
   align-items: center;
 }
 .prize-item {
+  opacity: 0.9;
   padding: 10px;
   display: flex;
   align-items: center;
   border-radius: 4px;
   flex-wrap: nowrap;
-  background-color: rgba(25,144,255, 0.37);
+  background-color: rgba(0, 92, 175, 0.37);
   border: 1px solid rgba(127, 255, 255, 0.25);
   color: rgba(25, 144, 255, 0.75);
   width: 80%;
@@ -27,7 +28,7 @@
   box-sizing: border-box;
   transition: transform 1s ease-in;
   cursor: pointer;
-  //margin-bottom: 40px;
+  margin-top: 10px;
   &:last-child {
     margin-bottom: 0;
   }
@@ -93,7 +94,7 @@
       border-radius: 1.8vh;
       position: relative;
       animation: animate-positive 2s;
-      background-color: rgba(253, 105, 0, 0.85);
+      background-color: rgb(249, 191, 69);
       //height: 1.8vh;
       height: 100%;
       transition: width 0.6s ease;
@@ -136,11 +137,33 @@
   }
 
   &.shine {
-    box-shadow: 0 0 15px 0 rgba(25, 144, 255, 0.6);
+    opacity: 1;
+    margin-bottom: 5px;
+    box-shadow: rgb(192, 196, 204) 0px 0px 10px 0px;
     transform: scale(1.1);
     transform-origin: left center;
     position: relative;
     overflow: hidden;
+    border: 2px solid rgb(249, 191, 69);
+    animation: breathAnimation 3s infinite alternate ease-in-out;
+  }
+
+  @keyframes breathAnimation {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    /* 初始状态 */
+    50% {
+      transform: scale(1.1) rotate(0deg);
+      opacity: 0.9;
+    }
+    /* 变化到最大值时的样式 */
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    /* 结束状态 */
   }
 
   &.shine span {

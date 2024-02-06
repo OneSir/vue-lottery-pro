@@ -61,11 +61,13 @@ function render() {
 window.render = render;
 
 function getContainerWidth() {
-  return document.getElementById( 'container' ).getBoundingClientRect().width;
+  return window.innerWidth - 310
+  // return document.getElementById( 'container' ).getBoundingClientRect().width;
 }
 
 function getContainerHeight() {
-  return document.getElementById( 'container' ).getBoundingClientRect().height;
+  return window.innerHeight - 75
+  // return document.getElementById( 'container' ).getBoundingClientRect().height;
 }
 
 export {

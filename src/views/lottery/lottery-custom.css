@@ -8,8 +8,8 @@
 }
 .element.prize.prize {
   transition: background-color 1.5s ease-in 0.3s;
-  background-color: rgba(253, 105, 0, 0.85) !important;
-  box-shadow: 0 0 12px rgba(253, 105, 0, 0.95);
+  background-color: rgb(0, 92, 175)!important;
+  box-shadow: 0 0 12px rgb(0, 92, 175);
 }
 .element.prize .symbol {
   text-shadow: none;
@@ -22,7 +22,7 @@
 
 .element .symbol {
   position: relative;
-  font-size: 30px;
+  font-size: 40px;
   top: 0;
 }
 .element .details {

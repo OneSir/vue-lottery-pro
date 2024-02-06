@@ -20,7 +20,7 @@ export const checkFixDirection = (canvasAspect, objectAspect) => {
 
 export const getFitWidthZ = (width) => {
   const vFOV = THREE.Math.degToRad(camera.fov); // 垂直的全角视野
-  const hFOV = 2 * Math.atan( Math.tan( vFOV / 2 ) * camera.aspect ); // 水平的全角视野
+  const hFOV = 1.9 * Math.atan( Math.tan( vFOV / 2 ) * camera.aspect ); // 水平的全角视野
   const z = (width / 2) / Math.tan(hFOV / 2);
   return z;
 };
@@ -38,7 +38,7 @@ export const getFitSphereZ = (radius) => {
 };
 
 export const zAnimate = async (z, duration) => {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     let isDone = false;
     new TWEEN.Tween( camera.position )
       .to( { z: z }, duration )

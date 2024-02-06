@@ -1,5 +1,5 @@
 import lotteryConfig from './lottery-config.js';
-const { cardList, colCount, rowCount } = lotteryConfig;
+const { cardList } = lotteryConfig;
 import { scene, objects } from './3d-core.js';
 
 const THREE = window.THREE;
@@ -15,7 +15,7 @@ const create3DCard = function(_objects = objects) {
     const element = document.createElement( 'div' );
     element.className = 'element';
     element.dataset.cardId = currentCardData.id; // 卡片唯一ID
-    element.style.backgroundColor = 'rgba(25,144,255,0.37)';
+    element.style.backgroundColor = 'rgba(249,191,69,0.8)';
     if (cardListWinAllIds.includes(currentCardData.id)) {
       element.classList.add('prize');
     }
@@ -41,7 +41,7 @@ const create3DCard = function(_objects = objects) {
     objectCSS.position.z = Math.random() * 4000 - 2000;
     scene.add( objectCSS );
 
-    objects.push( objectCSS );
+    _objects.push( objectCSS );
   }
 }
 

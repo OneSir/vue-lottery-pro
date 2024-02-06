@@ -3,15 +3,15 @@ const TWEEN = window.TWEEN;
 import { setCardDist } from './3d-calc-distance.js';
 
 function cardFlyAnimation(cardIndexList) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const selectObject = [];
-    cardIndexList.forEach((item, index) => {
+    cardIndexList.forEach((item) => {
       selectObject.push(objects[item]);
     });
     const locates = [];
     const duration = 600;
 
-    const selectRowCount = 1; // 行数 默认一行
+    const selectRowCount = Math.round(selectObject.length / 10) === 0 ? 1 : Math.round(selectObject.length / 10); // 行数 根据数量动态生成对应行数
     const cardPadding = 30;
     const objectLength = selectObject.length;
     const canvasSize = {
@@ -20,7 +20,7 @@ function cardFlyAnimation(cardIndexList) {
     }
 
     // 计算中奖卡片位置
-    const everyRowCount = Math.round(objectLength / selectRowCount);
+    const everyRowCount = Math.ceil(objectLength / selectRowCount);
     for (let i = 0; i < selectRowCount; i++) {
       const currentObjects = selectObject.slice(i * everyRowCount, (i+1) * everyRowCount);
       for (let j = 0; j < currentObjects.length; j++) {
@@ -74,7 +74,7 @@ function cardFlyAnimation(cardIndexList) {
 function rotateBall() {
   const circleCount = 10000; // 1万圈
   const durationTime = 1000 * circleCount / 4;
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     scene.rotation.y = 0;
     new TWEEN.Tween(scene.rotation)
       .to(

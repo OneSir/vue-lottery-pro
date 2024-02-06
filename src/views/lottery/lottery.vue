@@ -29,9 +29,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #1890ff;
+  color: rgb(249, 191, 69);
   font-size: 26px;
-  font-weight: bold;
+  font-weight: 800;
   //position: fixed;
 }
 .lottery-content {

@@ -40,8 +40,8 @@ a {
   right: 0px;
   font-size: 60px;
   font-weight: bold;
-  color: rgba(255,255,255,0.75);
-  text-shadow: 0 0 10px rgba(0,255,255,0.95);
+  color: rgba(28,28,28,0.75);
+  text-shadow: 0 0 10px rgba(255,255,251,0.95);
 }
 
 .element .details {
@@ -50,7 +50,7 @@ a {
   left: 0px;
   right: 0px;
   font-size: 12px;
-  color: rgba(25,144,255,0.75);
+  color: rgba(28,28,28,0.75);
 }
 
 button {
