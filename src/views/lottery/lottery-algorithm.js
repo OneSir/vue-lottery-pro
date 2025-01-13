@@ -1,5 +1,4 @@
 import lotteryConfig from './lottery-config.js';
-import cookies from 'vue-cookies'
 
 const random = function(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
@@ -12,22 +11,19 @@ const getRandomCard = function(currentPrize) {
   // 随机抽取数据
   const selectCardList = [];
   // 正式抽奖逻辑
-  const prize = cookies.get('all_can_prize_list') ? cookies.get('all_can_prize_list') : ['龍運當頭奖', '萬事興龍奖', '好運龍龍奖', '欣欣向龍奖', '其樂龍龍奖']
-  const hightPrize = ['特等奖', '一等奖Apple', '一等奖PS5', '二等奖大疆', '二等奖AirPods']
-  if (!cookies.get('all_can_prize_list')) cookies.set('all_can_prize_list', JSON.stringify(prize))
-  if (!prize.some(item => item === lotteryConfig.currentPrize)) {
-    const arr = [];
-    if (hightPrize.some(item => item === lotteryConfig.currentPrize)) {
-      cardListRemainAllCopy.forEach(element => {
-        if (element.allLottery) arr.push(element)
-      });
-    } else {
-      cardListRemainAllCopy.forEach(element => {
-        if (element.allLottery || element.special) arr.push(element)
-      });
-    }
-    cardListRemainAllCopy = arr;
-  }
+  const prizeIndex = lotteryConfig.prizeList.findIndex(
+		(item) => item.id === lotteryConfig.currentPrize
+	);
+	const currentLevel = lotteryConfig.prizeList[prizeIndex].level;
+	const arr = [];
+	cardListRemainAllCopy.forEach((element) => {
+		if (
+			!Object.prototype.hasOwnProperty.call(element, 'level') ||
+			element.level >= currentLevel
+		)
+			arr.push(element);
+	});
+	cardListRemainAllCopy = arr;
   for (let i = 0; i < selectCount; i++) {
     const curSelectIndex = random(0, cardListRemainAllCopy.length - 1);
     const card = cardListRemainAllCopy.splice(curSelectIndex, 1)[0];
