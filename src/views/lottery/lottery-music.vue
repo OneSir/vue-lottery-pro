@@ -454,8 +454,8 @@ export default class LotteryMusic extends Vue {
     prize.countRemain = prize.count;
     const index = prizeList.findIndex(item => item.id === prize.id)
     prizeList[index] = prize
-    lotteryConfig.everyTimeGet = prize.everyTimeGet,
-    lotteryConfig.currentPrize = prize.id,
+    // lotteryConfig.everyTimeGet = prize.everyTimeGet,
+    // lotteryConfig.currentPrize = prize.id,
     lotteryConfig.prizeList = prizeList,
     lotteryConfig.cardListWinAll = cardListWinAll,
     lotteryConfig.cardListRemainAll = lotteryConfig.cardListRemainAll.concat(cardListRemainAll),
